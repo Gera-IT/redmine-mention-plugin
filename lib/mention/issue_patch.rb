@@ -11,7 +11,6 @@ module Mention
           if journal.try(:notes).try(:present?) && users.count > 0
             users = users.map {|u| u[1..-1]} #to remove ~ before user_name
             users = User.where(login: users)
-            users = users.reject {|u| u.mail_notification == "none"}
             Mailer.issue_edit(issue.journals.last, users, users).deliver
           end
         end
