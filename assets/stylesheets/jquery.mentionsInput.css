@@ -1,7 +1,7 @@
 
 .mentions-input-box {
   position: relative;
-  background: #fff;
+  margin-top:40px;
 }
 
 .mentions-input-box .mentions-autocomplete-list {
