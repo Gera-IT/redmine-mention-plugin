@@ -7,7 +7,7 @@ module Mention
         unloadable
         base.send(:after_save) do |issue|
           journal = issue.journals.last
-          users = journal.notes.scan(/~[\w.]+/) if journal
+          users = journal.notes.scan(/~[\w.]+/) if journal && journal.notes
           if journal.try(:notes).try(:present?) && users.count > 0
             users = users.map {|u| u[1..-1]} #to remove ~ before user_name
             users = User.where(login: users)
