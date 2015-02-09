@@ -1,11 +1,13 @@
 $(function () {
 
-  $('.controller-issues textarea.wiki-edit, .controller-wiki textarea.wiki-edit').mentionsInput({
+  $('.controller-issues textarea.wiki-edit, .controller-wiki textarea.wiki-edit, .redactor-editor').mentionsInput({
     onDataRequest:function (mode, query, callback) {
+      project_id = $('form').first().attr('action').replace( /\/projects\//, '' );
+      project_id = project_id.replace( /\/search/, '' );
       var data = [];
       $.ajax({
         url: '/mention/search',
-        data: {'search_tag': query},
+        data: {'search_tag': query, project_id: project_id},
         success: function(result) {
           callback.call(this, result['users']);
         }
