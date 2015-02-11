@@ -1,6 +1,6 @@
 $(function () {
 
-  $('.controller-issues textarea.wiki-edit, .controller-wiki textarea.wiki-edit, .redactor-editor').mentionsInput({
+  $('.controller-issues textarea.wiki-edit, .controller-wiki textarea.wiki-edit').mentionsInput({
     onDataRequest:function (mode, query, callback) {
       project_id = $('form').first().attr('action').replace( /\/projects\//, '' );
       project_id = project_id.replace( /\/search/, '' );
