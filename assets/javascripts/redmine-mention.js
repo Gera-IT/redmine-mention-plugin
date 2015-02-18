@@ -26,4 +26,6 @@ setTimeout(function(){
             });
         }})
     });
-}, 2000);
+}, 3000);
+//need this delay to make sure redactor is loaded, and we've bind our mention listener to redactor's body. This is the only one
+//way to achieve this. Redactor's callbacks wont work because they fires few moments before redactor have been built into DOM
