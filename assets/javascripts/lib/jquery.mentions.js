@@ -572,7 +572,7 @@
       console.log(this.input[0].className);
       if ($('.redactor-editor').size() != 0)
       {
-        $(this.input[0].className).redactor('code.sync');
+        $('textarea').redactor("code.sync");
       }
       return this._watch(mention);
     };
