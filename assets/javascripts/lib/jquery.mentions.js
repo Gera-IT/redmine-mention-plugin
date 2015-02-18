@@ -568,11 +568,17 @@
       var mention, mentionNode;
       mentionNode = $(mentionTpl(data))[0];
       mention = insertMention(mentionNode, data.pos, this.marker);
-      console.log("Hello world");
-      console.log(this.input[0].className);
       if ($('.redactor-editor').size() != 0)
       {
         $('textarea').redactor("code.sync");
+        $.each($('.redactor-editor'), function(index){
+          text = $(this).html();
+          textar = $(this).next();
+          if ($(textar).is("textarea"))
+          {
+            $(textar).val(text);
+          }
+        })
       }
       return this._watch(mention);
     };
