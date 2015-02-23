@@ -1,17 +1,4 @@
-$(function(){
-    $('.redactor-editor').mentionsInput({source: function(request, response){
-        project_id = $('form').first().attr('action').replace( /\/projects\//, '' );
-        project_id = project_id.replace( /\/search/, '' );
-        $.ajax({
-            url: '/mention/search',
-            data: {'search_tag': request, project_id: project_id},
-            success: function(result) {
-                response(result['users'])
-            }
-        });
-    }})
-});
-
+setTimeout(function(){
 $(function(){
     $('.wiki-edit').mentionsInput({source: function(request, response){
         project_id = $('form').first().attr('action').replace( /\/projects\//, '' );
@@ -27,7 +14,7 @@ $(function(){
     $('.mentions-input').attr('style', 'display:block!important;');
     $('.highlighter').css('width', '95%');
     $('.jstEditor').css('margin-top', "34px;");
-});
+});}, 3000);
 
 
 setTimeout(function(){
