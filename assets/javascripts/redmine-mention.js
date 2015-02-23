@@ -26,6 +26,7 @@ $(function(){
     }});
     $('.mentions-input').attr('style', 'display:block!important;');
     $('.highlighter').css('width', '95%');
+    $('.jstEditor').css('margin-top', "34px;");
 });
 
 
