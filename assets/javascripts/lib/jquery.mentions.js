@@ -309,10 +309,11 @@
       var hidden;
       hidden = $('<input>', {
         type: 'hidden',
-        name: this.input.attr('name')
+        name: '123'
+        //name: this.input.attr('name') + '_1'
       });
       hidden.appendTo(this.container);
-      this.input.removeAttr('name');
+      //this.input.removeAttr('name');
       return hidden;
     };
 
@@ -555,17 +556,18 @@
         };
       })(this));
 
-      if ($('.redactor-editor').size() != 0)
-      {
-        $.each($('.redactor-editor'), function(index){
-          text = $(this).html();
-          textar = $(this).next();
-          if ($(textar).is("textarea"))
-          {
-            $(textar).val(text);
-          }
-        })
-      }
+      //if ($('.redactor-editor').size() != 0)
+      //{
+      //  $.each($('.redactor-editor'), function(index){
+      //    text = $(this).html();
+      //    textar = $(this).next();
+      //    if ($(textar).is("textarea"))
+      //    {
+      //      $(textar).val(text);
+      //    }
+      //  })
+      //}
+      $('.wiki-edit').redactor('code.sync');
 
       return this.input.html(value);
     };
@@ -574,17 +576,18 @@
       var mention, mentionNode;
       mentionNode = $(mentionTpl(data))[0];
       mention = insertMention(mentionNode, data.pos, this.marker);
-      if ($('.redactor-editor').size() != 0)
-      {
-        $.each($('.redactor-editor'), function(index){
-          text = $(this).html();
-          textar = $(this).next();
-          if ($(textar).is("textarea"))
-          {
-            $(textar).val(text);
-          }
-        })
-      }
+      //if ($('.redactor-editor').size() != 0)
+      //{
+      //  $.each($('.redactor-editor'), function(index){
+      //    text = $(this).html();
+      //    textar = $(this).next();
+      //    if ($(textar).is("textarea"))
+      //    {
+      //      $(textar).val(text);
+      //    }
+      //  })
+      //}
+      $('.wiki-edit').redactor('code.sync');
       return this._watch(mention);
     };
 
