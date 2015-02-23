@@ -556,18 +556,18 @@
         };
       })(this));
 
-      //if ($('.redactor-editor').size() != 0)
-      //{
-      //  $.each($('.redactor-editor'), function(index){
-      //    text = $(this).html();
-      //    textar = $(this).next();
-      //    if ($(textar).is("textarea"))
-      //    {
-      //      $(textar).val(text);
-      //    }
-      //  })
-      //}
-      $('.wiki-edit').redactor('code.sync');
+      if ($('.redactor-editor').size() != 0)
+      {
+        $.each($('.redactor-editor'), function(index){
+          text = $(this).html();
+          textar = $(this).next();
+          if ($(textar).is("textarea"))
+          {
+            $(textar).val(text);
+          }
+        })
+      }
+      //$('.wiki-edit').redactor('code.sync');
 
       return this.input.html(value);
     };
@@ -576,18 +576,18 @@
       var mention, mentionNode;
       mentionNode = $(mentionTpl(data))[0];
       mention = insertMention(mentionNode, data.pos, this.marker);
-      //if ($('.redactor-editor').size() != 0)
-      //{
-      //  $.each($('.redactor-editor'), function(index){
-      //    text = $(this).html();
-      //    textar = $(this).next();
-      //    if ($(textar).is("textarea"))
-      //    {
-      //      $(textar).val(text);
-      //    }
-      //  })
-      //}
-      $('.wiki-edit').redactor('code.sync');
+      if ($('.redactor-editor').size() != 0)
+      {
+        $.each($('.redactor-editor'), function(index){
+          text = $(this).html();
+          textar = $(this).next();
+          if ($(textar).is("textarea"))
+          {
+            $(textar).val(text);
+          }
+        })
+      }
+      //$('.wiki-edit').redactor('code.sync');
       return this._watch(mention);
     };
 
