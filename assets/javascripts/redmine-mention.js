@@ -14,7 +14,7 @@ $(function(){
     $('.mentions-input').attr('style', 'display:block!important;');
     $('.highlighter').css('width', '95%');
     $('.jstEditor').css('margin-top', "34px;");
-});}, 3000);
+});}, 5000);
 
 
 setTimeout(function(){
@@ -31,6 +31,6 @@ setTimeout(function(){
             });
         }})
     });
-}, 3000);
+}, 5000);
 //need this delay to make sure redactor is loaded, and we've bind our mention listener to redactor's body. This is the only one
 //way to achieve this. Redactor's callbacks wont work because they fires few moments before redactor have been built into DOM
