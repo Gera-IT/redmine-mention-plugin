@@ -16,7 +16,7 @@ module Mention
     mentioned_users.each do |mentioned_user|
       if user = User.find_by_login(mentioned_user[2..-2])
       	if watchable.is_a?(Issue) or watchable.is_a?(WikiPage)
-      		Watcher.create(:watchable => watchable, :user => user)
+					content = content.gsub(mentioned_user, "<a class='user active' href='/users/#{user.id}'>#{user.name}</a>")
       	else
       		content = content.gsub(mentioned_user, "<a class='user active' href='/users/#{user.id}'>#{user.name}</a>")
       	end
