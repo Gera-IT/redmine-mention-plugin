@@ -12,7 +12,7 @@ function initializeMention(){
         }
         else
         {console.log('native');
-            initializeNative();
+            //initializeNative();
         };
     }, 3000);
 
